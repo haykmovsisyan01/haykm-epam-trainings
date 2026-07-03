@@ -1,4 +1,4 @@
-package homeworks;
+package homeworks.triangles;
 
 public class Triangles {
     public static void upsideDownTriangle(int rows, char symbol) {
