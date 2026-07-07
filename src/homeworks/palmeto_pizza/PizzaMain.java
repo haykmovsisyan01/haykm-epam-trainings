@@ -1,31 +1,24 @@
 package homeworks.palmeto_pizza;
 
-
+import homeworks.palmeto_pizza.models.enums.Ingredient;
+import homeworks.palmeto_pizza.models.OrderItem;
+import homeworks.palmeto_pizza.models.Pizza;
+import homeworks.palmeto_pizza.models.enums.PizzaType;
+import homeworks.palmeto_pizza.services.OrderService;
 
 public class PizzaMain {
     public static void main(String[] args) {
-        PizzaOrderService pizzaOrderService = new PizzaOrderService("7717");
+        OrderService service = new OrderService(5454);
 
-        pizzaOrderService.orderPizza("Margarita", "Calzone", 2, "Tomato paste", "Pepper", "Garlic", "Bacon");
+        service.order(new OrderItem(new Pizza("314", PizzaType.REGULAR, Ingredient.BACON, Ingredient.CORN, Ingredient.CHEESE, Ingredient.OLIVES), 2),new OrderItem(new Pizza("jd", PizzaType.CALZONE, Ingredient.BACON, Ingredient.CHEESE, Ingredient.OLIVES), 3));
+        service.printCheck();
 
-        pizzaOrderService.printCheck();
+        Pizza pizza = new Pizza("My pizza", PizzaType.REGULAR);
 
-        pizzaOrderService = new PizzaOrderService("4372");
+        for (Ingredient value : Ingredient.values()) {
+            pizza.addIngredient(value);
+        }
 
-        pizzaOrderService.orderPizza("Peperoni", "Regular", 2, "Tomato paste", "Pepperoni", "Cheese");
-
-        pizzaOrderService.printCheck();
-
-        pizzaOrderService.showPizzaAttributes("Peperoni");
-
-
-        //////////
-
-        Pizza pizza = new Pizza("Margarita", "Calzone","Tomato paste", "Olives", "Garlic", "Bacon");
-
-        System.out.println(pizza);
-        System.out.println(pizza.addIngredient("Corn"));
-        System.out.println(pizza.addIngredient("Corn"));
         System.out.println(pizza);
     }
 }
