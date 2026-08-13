@@ -52,7 +52,7 @@ public class SortingTester {
         }
 
         for (int i = 0; i < sortingIterations; i++) {
-            System.out.println("Starting algorithms.sorting attempt number " + (i + 1));
+            System.out.println("Starting sorting attempt number " + (i + 1));
             array = getRandomArray();
             sort(array, sorter);
             System.out.println("Array has been sorted in " + sortingResult + " seconds");

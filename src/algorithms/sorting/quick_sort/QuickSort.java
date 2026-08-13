@@ -19,10 +19,10 @@ public class QuickSort extends Sorter {
     private <T extends Comparable<T>> void sort(T[] array, int low, int high) {
         if (low >= high) return;
 
-        int randomIndex = random.nextInt(low, high);
+        int randomIndex = random.nextInt(low, high + 1);
 
         // Swapping random element with the last one to get unpredictable pivot
-        // to avoid situations like when algorithms.sorting will have complexity O(n)
+        // to avoid O(n²) complexity when the array is already sorted
         // in case when array is sorted, always picking the last element as pivot is not efficient
         swap(array, randomIndex, high);
 
